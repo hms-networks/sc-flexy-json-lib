@@ -47,8 +47,7 @@ import java.util.Vector;
  * cast or query for type. There are also typed <code>get</code> and <code>opt</code> methods that
  * do type checking and type coersion for you.
  *
- * <p>The texts produced by the <code>toString</code> methods strictly conform to JSON syntax
- * rules.
+ * <p>The texts produced by the <code>toString</code> methods strictly conform to JSON syntax rules.
  * The constructors are more forgiving in the texts they will accept:
  *
  * <ul>
@@ -75,14 +74,10 @@ import java.util.Vector;
  */
 public class JSONArray {
 
-  /**
-   * The Vector where the JSONArray's properties are kept.
-   */
+  /** The Vector where the JSONArray's properties are kept. */
   private Vector myArrayList;
 
-  /**
-   * Construct an empty JSONArray.
-   */
+  /** Construct an empty JSONArray. */
   public JSONArray() {
     this.myArrayList = new Vector();
   }
@@ -130,7 +125,7 @@ public class JSONArray {
    * Construct a JSONArray from a source sJSON text.
    *
    * @param string A string that begins with <code>[</code>&nbsp;<small>(left bracket)</small> and
-   * ends with <code>]</code>&nbsp;<small>(right bracket)</small>.
+   *     ends with <code>]</code>&nbsp;<small>(right bracket)</small>.
    * @throws JSONException If there is a syntax error.
    */
   public JSONArray(String string) throws JSONException {
@@ -176,7 +171,7 @@ public class JSONArray {
    * @param index The index must be between 0 and length() - 1.
    * @return The truth.
    * @throws JSONException If there is no value for the index or if the value is not convertable to
-   * boolean.
+   *     boolean.
    */
   public boolean getBoolean(int index) throws JSONException {
     Object o = get(index);
@@ -227,7 +222,7 @@ public class JSONArray {
    * @param index The index must be between 0 and length() - 1.
    * @return The value.
    * @throws JSONException If the key is not found or if the value cannot be converted to a number.
-   * if the value cannot be converted to a number.
+   *     if the value cannot be converted to a number.
    */
   public int getInt(int index) throws JSONException {
     // Object o = get(index);
@@ -388,8 +383,7 @@ public class JSONArray {
 
   /**
    * Get the optional double value associated with an index. The defaultValue is returned if there
-   * is no value for the index, or if the value is not a number and cannot be converted to a
-   * number.
+   * is no value for the index, or if the value is not a number and cannot be converted to a number.
    *
    * @param index subscript
    * @param defaultValue The default value.
@@ -442,7 +436,7 @@ public class JSONArray {
    *
    * @param index subscript
    * @return A JSONArray value, or null if the index has no value, or if the value is not a
-   * JSONArray.
+   *     JSONArray.
    */
   public JSONArray optJSONArray(int index) {
     Object o = opt(index);
@@ -602,7 +596,7 @@ public class JSONArray {
    * Append an object value. This increases the array's length by one.
    *
    * @param value An object value. The value should be a Boolean, Double, Integer, JSONArray,
-   * JSONObject, Long, or String, or the JSONObject.NULL object.
+   *     JSONObject, Long, or String, or the JSONObject.NULL object.
    * @return this.
    */
   public JSONArray put(Object value) {
@@ -709,7 +703,7 @@ public class JSONArray {
    *
    * @param index The subscript.
    * @param value The value to put into the array. The value should be a Boolean, Double, Integer,
-   * JSONArray, JSONObject, Long, or String, or the JSONObject.NULL object.
+   *     JSONArray, JSONObject, Long, or String, or the JSONObject.NULL object.
    * @return this.
    * @throws JSONException If the index is negative or if the the value is an invalid number.
    */
@@ -733,7 +727,7 @@ public class JSONArray {
    * Produce a JSONObject by combining a JSONArray of names with the values of this JSONArray.
    *
    * @param names A JSONArray containing a list of key strings. These will be paired with the
-   * values.
+   *     values.
    * @return A JSONObject, or null if there are no names or if this JSONArray has no values.
    * @throws JSONException If any of the names are null.
    */
@@ -771,8 +765,8 @@ public class JSONArray {
    *
    * @param indentFactor The number of spaces to add to each level of indentation.
    * @return a printable, displayable, transmittable representation of the object, beginning with
-   * <code>[</code>&nbsp;<small>(left bracket)</small> and ending with <code>]</code>
-   * &nbsp;<small>(right bracket)</small>.
+   *     <code>[</code>&nbsp;<small>(left bracket)</small> and ending with <code>]</code>
+   *     &nbsp;<small>(right bracket)</small>.
    */
   public String toString(int indentFactor) throws JSONException {
     return toString(indentFactor, 0);

@@ -34,14 +34,10 @@ SOFTWARE.
  */
 public class JSONTokener {
 
-  /**
-   * The index of the next character.
-   */
+  /** The index of the next character. */
   private int myIndex;
 
-  /**
-   * The source string being tokenized.
-   */
+  /** The source string being tokenized. */
   private String mySource;
 
   /**
@@ -127,7 +123,7 @@ public class JSONTokener {
    * @param n The number of characters to take.
    * @return A string of n characters.
    * @throws JSONException Substring bounds error if there are not n characters remaining in the
-   * source string.
+   *     source string.
    */
   public String next(int n) throws JSONException {
     int i = this.myIndex;
@@ -188,9 +184,8 @@ public class JSONTokener {
    * formal JSON format does not allow strings in single quotes, but an implementation is allowed to
    * accept them.
    *
-   * @param quote The quoting character, either <code>"</code>&nbsp;<small>(double quote)</small>
-   * or
-   * <code>'</code>&nbsp;<small>(single quote)</small>.
+   * @param quote The quoting character, either <code>"</code>&nbsp;<small>(double quote)</small> or
+   *     <code>'</code>&nbsp;<small>(single quote)</small>.
    * @return A String.
    * @throws JSONException Unterminated string.
    */

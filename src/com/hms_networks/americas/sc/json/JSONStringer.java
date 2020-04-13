@@ -29,9 +29,8 @@ SOFTWARE.
  * strictly conform to JSON syntax rules. No whitespace is added, so the results are ready for
  * transmission or storage. Each instance of JSONStringer can produce one JSON text.
  *
- * <p>A JSONStringer instance provides a <code>value</code> method for appending values to the
- * text, and a <code>key</code> method for adding keys before values in objects. There are
- * <code>array
+ * <p>A JSONStringer instance provides a <code>value</code> method for appending values to the text,
+ * and a <code>key</code> method for adding keys before values in objects. There are <code>array
  * </code> and <code>endArray</code> methods that make and bound array values, and <code>object
  * </code> and <code>endObject</code> methods which make and bound object values. All of these
  * methods return the JSONWriter instance, permitting cascade style. For example,
@@ -61,9 +60,7 @@ SOFTWARE.
  */
 public class JSONStringer extends JSONWriter {
 
-  /**
-   * Make a fresh JSONStringer. It can be used to build one JSON text.
-   */
+  /** Make a fresh JSONStringer. It can be used to build one JSON text. */
   public JSONStringer() {
     super(new StringWriter());
   }
