@@ -59,9 +59,7 @@ public class StringWriter extends Writer {
     buf.append(str.substring(off, len));
   }
 
-  public void flush() throws IOException {
-  }
+  public void flush() throws IOException {}
 
-  public void close() throws IOException {
-  }
+  public void close() throws IOException {}
 }

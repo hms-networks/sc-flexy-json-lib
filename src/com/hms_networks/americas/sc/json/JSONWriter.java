@@ -64,34 +64,22 @@ public class JSONWriter {
 
   private static final int maxdepth = 20;
 
-  /**
-   * The comma flag determines if a comma should be output before the next value.
-   */
+  /** The comma flag determines if a comma should be output before the next value. */
   private boolean comma;
 
-  /**
-   * The current mode. Values: 'a' (array), 'd' (done), 'i' (initial), 'k' (key), 'o' (object).
-   */
+  /** The current mode. Values: 'a' (array), 'd' (done), 'i' (initial), 'k' (key), 'o' (object). */
   protected char mode;
 
-  /**
-   * The object/array stack.
-   */
+  /** The object/array stack. */
   private char[] stack;
 
-  /**
-   * The stack top index. A value of 0 indicates that the stack is empty.
-   */
+  /** The stack top index. A value of 0 indicates that the stack is empty. */
   private int top;
 
-  /**
-   * The writer that will receive the output.
-   */
+  /** The writer that will receive the output. */
   protected Writer writer;
 
-  /**
-   * Make a fresh JSONWriter. It can be used to build one JSON text.
-   */
+  /** Make a fresh JSONWriter. It can be used to build one JSON text. */
   public JSONWriter(Writer w) {
     this.comma = false;
     this.mode = 'i';
@@ -136,7 +124,7 @@ public class JSONWriter {
    *
    * @return this
    * @throws JSONException If the nesting is too deep, or if the object is started in the wrong
-   * place (for example as a key or after the end of the outermost array or object).
+   *     place (for example as a key or after the end of the outermost array or object).
    */
   public JSONWriter array() throws JSONException {
     if (this.mode == 'i' || this.mode == 'o' || this.mode == 'a') {
@@ -197,7 +185,7 @@ public class JSONWriter {
    * @param s A key string.
    * @return this
    * @throws JSONException If the key is out of place. For example, keys do not belong in arrays or
-   * if the key is null.
+   *     if the key is null.
    */
   public JSONWriter key(String s) throws JSONException {
     if (s == null) {
@@ -227,7 +215,7 @@ public class JSONWriter {
    *
    * @return this
    * @throws JSONException If the nesting is too deep, or if the object is started in the wrong
-   * place (for example as a key or after the end of the outermost array or object).
+   *     place (for example as a key or after the end of the outermost array or object).
    */
   public JSONWriter object() throws JSONException {
     if (this.mode == 'i') {
@@ -309,7 +297,7 @@ public class JSONWriter {
    * Append an object value.
    *
    * @param o The object to append. It can be null, or a Boolean, Number, String, JSONObject, or
-   * JSONArray, or an object with a toJSONString() method.
+   *     JSONArray, or an object with a toJSONString() method.
    * @return this
    * @throws JSONException If the value is out of sequence.
    */

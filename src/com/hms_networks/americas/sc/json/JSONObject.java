@@ -122,9 +122,7 @@ public class JSONObject {
     }
   }
 
-  /**
-   * The hash map where the JSONObject's properties are kept.
-   */
+  /** The hash map where the JSONObject's properties are kept. */
   private Hashtable myHashMap;
 
   /**
@@ -134,9 +132,7 @@ public class JSONObject {
    */
   public static final Object NULL = new Null();
 
-  /**
-   * Construct an empty JSONObject.
-   */
+  /** Construct an empty JSONObject. */
   public JSONObject() {
     this.myHashMap = new Hashtable();
   }
@@ -242,7 +238,7 @@ public class JSONObject {
    * Construct a JSONObject from a string. This is the most commonly used JSONObject constructor.
    *
    * @param string A string beginning with <code>{</code>&nbsp;<small>(left brace)</small> and
-   * ending with <code>}</code>&nbsp;<small>(right brace)</small>.
+   *     ending with <code>}</code>&nbsp;<small>(right brace)</small>.
    * @throws JSONException If there is a syntax error in the source string.
    */
   public JSONObject(String string) throws JSONException {
@@ -304,8 +300,7 @@ public class JSONObject {
   // #if CLDC!="1.0"
 
   /**
-   * Produce a string from a double. The string "null" will be returned if the number is not
-   * finite.
+   * Produce a string from a double. The string "null" will be returned if the number is not finite.
    *
    * @param d A double.
    * @return A String.
@@ -382,7 +377,7 @@ public class JSONObject {
    * @param key A key string.
    * @return The numeric value.
    * @throws JSONException if the key is not found or if the value is not a Number object and cannot
-   * be converted to a number.
+   *     be converted to a number.
    */
   public double getDouble(String key) throws JSONException {
     Object o = get(key);
@@ -416,7 +411,7 @@ public class JSONObject {
    * @param key A key string.
    * @return The integer value.
    * @throws JSONException if the key is not found or if the value cannot be converted to an
-   * integer.
+   *     integer.
    */
   public int getInt(String key) throws JSONException {
     Object o = get(key);
@@ -526,7 +521,7 @@ public class JSONObject {
    *
    * @param key A key string.
    * @return true if there is no value associated with the key or if the value is the
-   * JSONObject.NULL object.
+   *     JSONObject.NULL object.
    */
   public boolean isNull(String key) {
     return JSONObject.NULL.equals(opt(key));
@@ -564,9 +559,7 @@ public class JSONObject {
     return ja.length() == 0 ? null : ja;
   }
 
-  /**
-   * Shave off trailing zeros and decimal point, if possible.
-   */
+  /** Shave off trailing zeros and decimal point, if possible. */
   public static String trimNumber(String s) {
     if (s.indexOf('.') > 0 && s.indexOf('e') < 0 && s.indexOf('E') < 0) {
       while (s.endsWith("0")) {
@@ -865,7 +858,7 @@ public class JSONObject {
    *
    * @param key A key string.
    * @param value An object which is the value. It should be of one of these types: Boolean, Double,
-   * Integer, JSONArray, JSONObject, Long, String, or the JSONObject.NULL object.
+   *     Integer, JSONArray, JSONObject, Long, String, or the JSONObject.NULL object.
    * @return this.
    * @throws JSONException If the value is non-finite number or if the key is null.
    */
@@ -887,7 +880,7 @@ public class JSONObject {
    *
    * @param key A key string.
    * @param value An object which is the value. It should be of one of these types: Boolean, Double,
-   * Integer, JSONArray, JSONObject, Long, String, or the JSONObject.NULL object.
+   *     Integer, JSONArray, JSONObject, Long, String, or the JSONObject.NULL object.
    * @return this.
    * @throws JSONException If the value is a non-finite number.
    */
@@ -998,7 +991,7 @@ public class JSONObject {
    * Produce a JSONArray containing the values of the members of this JSONObject.
    *
    * @param names A JSONArray containing a list of key strings. This determines the sequence of the
-   * values in the result.
+   *     values in the result.
    * @return A JSONArray of values.
    * @throws JSONException If any of the values are non-finite numbers.
    */
@@ -1020,7 +1013,7 @@ public class JSONObject {
    * <p>Warning: This method assumes that the data structure is acyclical.
    *
    * @return a printable, displayable, portable, transmittable representation of the object,
-   * beginning with <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}
+   *     beginning with <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}
    * </code>&nbsp;<small>(right brace)</small>.
    */
   public String toString() {
@@ -1051,7 +1044,7 @@ public class JSONObject {
    *
    * @param indentFactor The number of spaces to add to each level of indentation.
    * @return a printable, displayable, portable, transmittable representation of the object,
-   * beginning with <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}
+   *     beginning with <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}
    * </code>&nbsp;<small>(right brace)</small>.
    * @throws JSONException If the object contains an invalid number.
    */
@@ -1067,8 +1060,8 @@ public class JSONObject {
    * @param indentFactor The number of spaces to add to each level of indentation.
    * @param indent The indentation of the top level.
    * @return a printable, displayable, transmittable representation of the object, beginning with
-   * <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}</code>
-   * &nbsp;<small>(right brace)</small>.
+   *     <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}</code>
+   *     &nbsp;<small>(right brace)</small>.
    * @throws JSONException If the object contains an invalid number.
    */
   String toString(int indentFactor, int indent) throws JSONException {
@@ -1122,8 +1115,8 @@ public class JSONObject {
    *
    * @param value The value to be serialized.
    * @return a printable, displayable, transmittable representation of the object, beginning with
-   * <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}</code>
-   * &nbsp;<small>(right brace)</small>.
+   *     <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}</code>
+   *     &nbsp;<small>(right brace)</small>.
    * @throws JSONException If the value is or contains an invalid number.
    */
   static String valueToString(Object value) throws JSONException {
@@ -1170,8 +1163,8 @@ public class JSONObject {
    * @param indentFactor The number of spaces to add to each level of indentation.
    * @param indent The indentation of the top level.
    * @return a printable, displayable, transmittable representation of the object, beginning with
-   * <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}</code>
-   * &nbsp;<small>(right brace)</small>.
+   *     <code>{</code>&nbsp;<small>(left brace)</small> and ending with <code>}</code>
+   *     &nbsp;<small>(right brace)</small>.
    * @throws JSONException If the object contains an invalid number.
    */
   static String valueToString(Object value, int indentFactor, int indent) throws JSONException {
