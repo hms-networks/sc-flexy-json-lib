@@ -67,7 +67,7 @@ import java.util.Vector;
  *       these characters: <code>{ } [ ] / \ : , = ; #</code> and if they do not look like numbers
  *       and if they are not the reserved words <code>true</code>, <code>false</code>, or <code>null
  *       </code>.
- *   <li>Keys can be followed by <code>=</code> or <code>=></code> as well as by <code>:</code>.
+ *   <li>Keys can be followed by <code>=</code> or <code>=&gt;</code> as well as by <code>:</code>.
  *   <li>Values can be followed by <code>;</code> <small>(semicolon)</small> as well as by <code>,
  *       </code> <small>(comma)</small>.
  *   <li>Numbers may have the <code>0-</code> <small>(octal)</small> or <code>0x-</code>
@@ -893,7 +893,7 @@ public class JSONObject {
 
   /**
    * Produce a string in double quotes with backslash sequences in all the right places. A backslash
-   * will be inserted within </, allowing JSON text to be delivered in HTML. In JSON text, a string
+   * will be inserted within &lt;/, allowing JSON text to be delivered in HTML. In JSON text, a string
    * cannot contain a control character or an unescaped quote or backslash.
    *
    * @param string A String
