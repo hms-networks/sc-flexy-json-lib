@@ -893,8 +893,8 @@ public class JSONObject {
 
   /**
    * Produce a string in double quotes with backslash sequences in all the right places. A backslash
-   * will be inserted within &lt;/, allowing JSON text to be delivered in HTML. In JSON text, a string
-   * cannot contain a control character or an unescaped quote or backslash.
+   * will be inserted within &lt;/, allowing JSON text to be delivered in HTML. In JSON text, a
+   * string cannot contain a control character or an unescaped quote or backslash.
    *
    * @param string A String
    * @return A String correctly formatted for insertion in a JSON text.
