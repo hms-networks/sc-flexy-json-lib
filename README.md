@@ -17,7 +17,7 @@ JSON class library for Ewon Flexy. Code has been adapted from its original JSON.
 
 ## [Developer Documentation](#table-of-contents)
 
-Developer documentation is available in Javadoc format at [https://hms-networks.github.io/sc-flexy-json-lib/index.html](https://hms-networks.github.io/sc-flexy-json-lib/index.html).
+Developer documentation is available in Javadoc format found in the release package [https://github.com/hms-networks/sc-flexy-json-lib/releases](https://github.com/hms-networks/sc-flexy-json-lib/releases).
 
 ## [Dependencies](#table-of-contents)
 None
