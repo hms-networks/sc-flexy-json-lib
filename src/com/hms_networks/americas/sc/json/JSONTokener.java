@@ -51,6 +51,16 @@ public class JSONTokener {
   }
 
   /**
+   * Creates a JSON object from the contents of the JSON tokener.
+   *
+   * @return JSON object from tokener
+   * @throws JSONException if unable to create object with tokener
+   */
+  public JSONObject getJSONObject() throws JSONException {
+    return new JSONObject(this);
+  }
+
+  /**
    * Back up one character. This provides a sort of lookahead capability, so that you can test for a
    * digit or letter before attempting to parse the next number or identifier.
    */
